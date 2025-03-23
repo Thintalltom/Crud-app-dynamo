@@ -1,11 +1,8 @@
-import map from '../src/assets/BR 1.svg'
+import Form from "./components/Form"
 function App() {
- 
-
   return (
     <>
-    <img src={map} alt="ma of the country" />
- 
+   <Form firstname={""} lastname={""} userId={""} email={""}  />
     </>
   )
 }
