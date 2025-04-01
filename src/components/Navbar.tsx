@@ -1,4 +1,4 @@
-import React from 'react'
+
 import FrameImg from "../assets/Frame.svg";
 const Navbar = () => {
   return (

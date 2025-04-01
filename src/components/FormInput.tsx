@@ -1,6 +1,8 @@
-import React from 'react'
+import add from '../assets/svg/add.svg'
+
 
 const FormInput = () => {
+
   return (
     <div className='h-[50vh]  p-[20px]' >
         <div className='border-[0.5px] flex flex-col gap-[15px] shadow-sm p-[20px] rounded-[2px] bg-white h-[100%] '>
@@ -24,7 +26,7 @@ const FormInput = () => {
             </div>
         </div>
 
-        <button className='bg-blue-600 text-white font-bold p-[5px] rounded shadow-sm w-fit '>Add User</button>
+        <button className='bg-blue-600 text-white flex gap-[5px] font-bold p-[5px] rounded shadow-sm w-fit '><img src={add} /> Add User</button>
         </div>
 
     </div>
