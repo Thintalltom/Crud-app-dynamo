@@ -21,3 +21,5 @@ This function performs Create, Read, Update, and Delete operations on DynamoDB.
 4. API Gateway
 Set up API Gateway to expose endpoints.
 Every time a request is made to the API Gateway, the Lambda function is triggered, and a response is returned based on the logic (e.g., insert or fetch from DynamoDB).
+5. React Query
+Made use of React Query to get data and automatically updates when new data is added
