@@ -5,7 +5,7 @@ import FormInput from "./FormInput";
 import Data  from "./Data";
 const Form: FC<formTypes> = () => {
   return (
-    <div className=" h-full w-full bg-[#D1D5DB]">
+    <div className=" h-full w-[100%] ">
       <Navbar />
       <FormInput />
       <Data />
