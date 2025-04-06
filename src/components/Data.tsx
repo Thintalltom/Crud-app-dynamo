@@ -1,4 +1,3 @@
-import search from "../assets/svg/search.svg";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
