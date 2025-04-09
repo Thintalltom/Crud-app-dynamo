@@ -51,10 +51,10 @@ const FormInput = () => {
   };
 
   return (
-    <div className="h-[50vh]  p-[20px]">
-      <div className="border-[0.5px] flex flex-col gap-[15px] shadow-sm p-[20px] rounded-[2px] bg-white h-[100%] ">
+    <div className="h-fit  p-[20px] ">
+      <div className="border-[0.5px] flex flex-col gap-[15px]  shadow-sm p-[20px] rounded-[2px] bg-white h-[100%] ">
         <p>Add New User</p>
-        <div className="grid gap-[10px] grid-rows-2 h-[70%] grid-flow-col">
+        <div className="lg:grid sm:gap-[20px] lg:gap-[10px] lg:grid-rows-2 h-[70%] lg:grid-flow-col sm:grid sm:grid-flow-row ">
           <div className=" flex flex-col gap-[10px]">
             <p className="text-xs">Username</p>
             <input

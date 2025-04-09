@@ -41,24 +41,11 @@ const Data = () => {
   });
 
   return (
-    <div className="h-[70vh]  p-[20px]">
+    <div className="h-fit  p-[20px]">
       <div className="border-[0.5px] p-[20px] flex gap-[5px] flex-col shadow-sm rounded-[2px] bg-white h-[100%] ">
         <p className="font-bold ">Users List</p>
-        
-        {isLoading ? (
-          <p className="flex justify-center items-center w-[100%] h-[100%]">
-            Loading...
-          </p>
-        ) : isError ? (
-          <p className="flex justify-center items-center w-[100%] h-[100%]">
-            Oops! Error fetching data
-          </p>
-        ) : !data || data.length === 0 ? (
-          <p className="flex justify-center items-center w-[100%] h-[100%] text-gray-500 font-semibold">
-            No users found. Add data to get started.
-          </p>
-        ) : (
-          <table className=" w-full">
+        <div className="overflow-x-auto">
+          <table className=" w-full ">
             <thead>
               <tr className="">
                 <th className="text-sm font-light p-[10px] text-left">
@@ -69,32 +56,46 @@ const Data = () => {
                 <th className="text-sm font-light text-left">Email</th>
               </tr>
             </thead>
-            <tbody>
-              {data?.map((user: any, index: number) => (
-                <tr
-                  key={user.id?.S || index}
-                  className="border-t border-gray-300"
-                >
-                  <td className="p-[10px]">{user.username?.S}</td>
-                  <td className="p-[10px]">{user.firstname?.S}</td>
-                  <td className="p-[10px]">{user.lastname?.S}</td>
-                  <td className="p-[10px]">{user.email?.S}</td>
-                  <td className="p-[10px]">
-                    <button
-                      className="bg-red-500 text-white px-4 py-1 rounded"
-                      onClick={() => {
-                        console.log("Deleting user ID:", user.id?.S); // add this
-                        mutation.mutate(user.id?.S);
-                      }}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
+            {isLoading ? (
+              <p className="flex justify-center items-center w-[100%] h-[100%]">
+                Loading...
+              </p>
+            ) : isError ? (
+              <p className="flex justify-center items-center w-[100%] h-[100%]">
+                Oops! Error fetching data
+              </p>
+            ) : !data || data.length === 0 ? (
+              <p className="flex justify-center items-center w-[100%] h-[100%] text-gray-500 font-semibold">
+                No users found. Add data to get started.
+              </p>
+            ) : (
+              <tbody>
+                {data?.map((user: any, index: number) => (
+                  <tr
+                    key={user.id?.S || index}
+                    className="border-t border-gray-300"
+                  >
+                    <td className="p-[10px]">{user.username?.S}</td>
+                    <td className="p-[10px]">{user.firstname?.S}</td>
+                    <td className="p-[10px]">{user.lastname?.S}</td>
+                    <td className="p-[10px]">{user.email?.S}</td>
+                    <td className="p-[10px]">
+                      <button
+                        className="bg-red-500 text-white px-4 py-1 rounded"
+                        onClick={() => {
+                          console.log("Deleting user ID:", user.id?.S); // add this
+                          mutation.mutate(user.id?.S);
+                        }}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            )}
           </table>
-        )}
+        </div>
       </div>
     </div>
   );
